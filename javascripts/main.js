@@ -6,10 +6,10 @@ const helpBtn = document.querySelector(".btn--help");
 
 function handleToastMessage({ title, message, type }) {
   const icons = {
-    success: "/images/success.png",
-    fail: "/images/fail.png",
-    warning: "/images/warning.png",
-    help: "/images/question.png",
+    success: "images/success.png",
+    fail: "images/fail.png",
+    warning: "images/warning.png",
+    help: "images/question.png",
   };
 
   toast.innerHTML = `
@@ -28,10 +28,10 @@ function handleToastMessage({ title, message, type }) {
     `;
 
   const decoration = {
-    success: "../images/green-bubbles.png",
-    fail: "../images/Red-bubbles.png",
-    warning: "../images/Yellow-bubbles.png",
-    help: "../images/Blue-bubbles.png",
+    success: "images/green-bubbles.png",
+    fail: "images/Red-bubbles.png",
+    warning: "images/Yellow-bubbles.png",
+    help: "images/Blue-bubbles.png",
   };
 
   const bgColor = {
