@@ -1,0 +1,137 @@
+@import "variable";
+@import "reset";
+@import "mixin";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(#ff6ba4, #ffb86c);
+  border-radius: 50px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #fafafa;
+}
+
+body {
+  font-family: $font;
+  min-height: 100vh;
+  background-color: #262434;
+  user-select: none;
+}
+
+.container {
+  min-height: 100vh;
+  @include flexBox(center, center);
+  gap: 20px;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 10px;
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  &--success {
+    background-color: #4E8D7C;
+  }
+
+  &--fail {
+    background-color: #F64B3C;
+  }
+
+  &--warning {
+    background-color: #EF8D32;
+  }
+
+  &--help {
+    background-color: #3282B8;
+  }
+}
+
+.toast {
+  position: fixed;
+  top: 64px;
+  right: 32px;
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    width: 438px;
+    border-radius: 32px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: 0.3s linear;
+    animation: slideInLeft ease 1s, fadeOut linear 1s 5s forwards;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(calc(100% + 32px));
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: -42px;
+    left: 20px;
+  }
+
+  &__content {
+    padding-top: 20px;
+    padding-bottom: 27px;
+    max-width: 244px;
+    margin-left: 130px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 51px;
+    letter-spacing: -0.035em;
+    color: #FFFFFF;
+  }
+
+  &__message {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+  }
+
+  &__close {
+    margin-left: auto;
+    padding: 27px;
+    cursor: pointer;
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}
