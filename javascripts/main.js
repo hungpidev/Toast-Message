@@ -22,7 +22,7 @@ function handleToastMessage({ title, message, type }) {
         <p class="toast__message">${message}</p>
       </div>
       <div class="toast__close">
-        <img src="/images/close.png" alt="close" class="close">
+        <img src="images/close.png" alt="close" class="close">
       </div>
     </div>
     `;
